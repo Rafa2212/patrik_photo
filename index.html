@@ -10,7 +10,7 @@ layout: default
         <h1><a href="index.html"><strong>{{ site.header.title }}</strong> {{ site.header.subtitle }}</a></h1>
         <nav>
             <ul>
-                <li><a href="#footer" class="icon fa-info-circle">About</a></li>
+                <li><a href="#footer" class="icon fa-info-circle">Despre mine</a></li>
             </ul>
         </nav>
     </header>
@@ -18,11 +18,12 @@ layout: default
     <!-- Main -->
     <div id="main" data-exif='{{ site.exif }}'>
         {% for image in site.static_files %}
+        {% assign name = image.name | split: '_' | first %}
         {% if image.path contains 'fulls' %}
         <article class="thumb">
             <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" class="image">
                 <img src="{{ site.baseurl }}{{ site.image_thumbs_loc }}/{{ image.name }}" alt=""
-                     data-name="{{ image.name }}"/></a>
+                     data-name="{{ image.name }}" data-group="{{ name }}"/></a>
             <!--<h2></h2>
             <p></p>-->
         </article>
@@ -37,25 +38,9 @@ layout: default
                 <section>
                     <h2>{{ site.footer.name }}</h2>
                     <p>{{ site.footer.bio }}</p>
-                    <p>{{ site.footer.github }}</p>
                 </section>
                 <section>
-                    <h2>Sponsor</h2>
-                    <div class="ad">
-                        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                        <ins class="adsbygoogle"
-                             style="display:block; text-align:center;"
-                             data-ad-layout="in-article"
-                             data-ad-format="fluid"
-                             data-ad-client="ca-pub-1702577941194110"
-                             data-ad-slot="9823584598"></ins>
-                        <script>
-                            (adsbygoogle = window.adsbygoogle || []).push({});
-                        </script>
-                    </div>
-                </section>
-                <section>
-                    <h2>Follow me on ...</h2>
+                    <h2>Urmărește-mă pe ...</h2>
                     <ul class="icons">
                         {% if site.social_urls.facebook %}
                             <li>
@@ -107,20 +92,20 @@ layout: default
             </div>
             <div>
                 <section>
-                    <h2>Get in touch</h2>
+                    <h2>Contact</h2>
                     <form method="post" action="#">
                         <div class="field half first">
-                            <input type="text" name="name" id="name" placeholder="Name"/>
+                            <input type="text" name="name" id="name" placeholder="Nume"/>
                         </div>
                         <div class="field half">
                             <input type="text" name="email" id="email" placeholder="Email"/>
                         </div>
                         <div class="field">
-                            <textarea name="message" id="message" rows="4" placeholder="Message"></textarea>
+                            <textarea name="message" id="message" rows="4" placeholder="Mesaj"></textarea>
                         </div>
                         <ul class="actions">
-                            <li><input type="submit" value="Send" class="special"/></li>
-                            <li><input type="reset" value="Reset"/></li>
+                            <li><input type="submit" value="Trimite" class="special"/></li>
+                            <li><input type="reset" value="Resetează"/></li>
                         </ul>
                     </form>
                 </section>
