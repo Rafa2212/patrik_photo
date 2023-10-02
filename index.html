@@ -4,7 +4,6 @@ layout: default
 
 <!-- Wrapper -->
 <div id="wrapper">
-
     <!-- Header -->
     <header id="header">
         <h1><a href="index.html"><strong>{{ site.header.title }}</strong> {{ site.header.subtitle }}</a></h1>
@@ -15,22 +14,32 @@ layout: default
         </nav>
     </header>
 
-    <!-- Main -->
-    <div id="main" data-exif='{{ site.exif }}'>
-        {% for image in site.static_files %}
-        {% assign name = image.name | split: '_' | first %}
-        {% if image.path contains 'fulls' %}
-        <article class="thumb">
-            <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" class="image">
-                <img src="{{ site.baseurl }}{{ site.image_thumbs_loc }}/{{ image.name }}" alt=""
-                     data-name="{{ image.name }}" data-group="{{ name }}"/></a>
-            <!--<h2></h2>
-            <p></p>-->
-        </article>
-        {% endif %}
-        {% endfor %}
+    <div>
+        <p>Ioan</p>
     </div>
-
+    <!-- Main -->
+    <div id="main">
+        {%- for image in site.static_files reversed -%}
+        {%- if image.path contains 'fulls' -%}
+        <article class="thumb">
+        {% assign title = false %}
+        {%- for tfile in site.static_files reversed -%}
+            {%- if tfile.path contains 'texts' -%}
+                {%- if tfile.path contains image.basename -%}
+                    {%- assign title = true -%}
+                        <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" id="image" class="swipebox" title="{% include_relative /images/texts/{{ tfile.name }} %}">
+                    {%- endif -%}
+            {%- endif -%}
+        {%- endfor -%}
+        {%- if title != true -%}
+            <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" id="image" class="swipebox" title="{{ image.name }}">
+        {%- endif -%}
+                <img src="{{ site.baseurl }}{{ site.image_thumbs_loc }}/{{ image.name }}" alt=""
+                     data-name="{{ image.name }}"/></a>
+        </article>
+        {%- endif -%}
+        {%- endfor -%}
+    </div>
     <!-- Footer -->
     <footer id="footer" class="panel">
         <div class="inner split">
