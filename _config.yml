@@ -6,19 +6,16 @@ image_thumbs_loc: "/images/thumbs"
 google_analytics: "UA-46465113-2"
 
 # UI configs
-title: "Photography by Patrik Stoian"
-subtitle: "See the world through my eyes!"
+title: "Patrik Stoian Fotograf"
+subtitle: ""
 author: "Patrik Stoian"
 header:
  title: "Patrik Stoian"
- subtitle: " - Fotograf din Timisoara"
+ subtitle: " - Fotograf"
 footer:
  name: "Fotograf din Timisoara"
  bio: "Bună, sunt Patrik și doresc să îți prezint serviciile foto pe care le ofer. Am pornit în călătoria mea de fotograf cu poze realizate la evenimente business, petreceri de firmă, nunți, botezuri, dar și ședințe foto de faimilie sau portofoliu. Pozele mele oglindesc pasiunea și profesionalismul oferit la fiecare ședință foto."
 web_design: "PS"
-# Configure which exif data to display
-# Tag is the actual exif tag, icon is a fontawesome icon. Use JSON notation without line breaks
-exif: '[{"tag": "Model", "icon": "camera-retro"}, {"tag": "FNumber", "icon": "dot-circle-o"}, {"tag": "ExposureTime", "icon": "clock-o"}, {"tag": "ISOSpeedRatings", "icon": "info-circle"}]'
 social_urls:
   instagram: "https://www.instagram.com/patrikstoian_"
   facebook: "https://www.facebook.com/patrik.stoian"

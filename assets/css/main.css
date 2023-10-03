@@ -1,6 +1,5 @@
 @import url(font-awesome.min.css);
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,400italic");
-
 /*
 	Multiverse by HTML5 UP
 	html5up.net | @ajlkn
@@ -8,6 +7,12 @@
 */
 
 /* Reset */
+
+	#h2{
+		text-align: center;
+		vertical-align: top;
+		padding-top: 10px;
+	}
 
 	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 		margin: 0;
@@ -852,42 +857,6 @@
 						padding: 0 0 0 0.5em;
 					}
 
-			@media screen and (max-width: 480px) {
-
-				ul.actions {
-					margin: 0 0 2em 0;
-				}
-
-					ul.actions li {
-						padding: 1em 0 0 0;
-						display: block;
-						text-align: center;
-						width: 100%;
-					}
-
-						ul.actions li:first-child {
-							padding-top: 0;
-						}
-
-						ul.actions li > * {
-							width: 100%;
-							margin: 0 !important;
-						}
-
-							ul.actions li > *.icon:before {
-								margin-left: -2em;
-							}
-
-					ul.actions.small li {
-						padding: 0.5em 0 0 0;
-					}
-
-						ul.actions.small li:first-child {
-							padding-top: 0;
-						}
-
-			}
-
 	dl {
 		margin: 0 0 2em 0;
 	}
@@ -1074,27 +1043,6 @@
 				.panel > .inner.split > div {
 					margin-left: 0;
 					width: 100%;
-				}
-
-		}
-
-		@media screen and (max-width: 736px) {
-
-			.panel {
-				-moz-transform: translateY(-100vh);
-				-webkit-transform: translateY(-100vh);
-				-ms-transform: translateY(-100vh);
-				transform: translateY(-100vh);
-				padding: 4em 2em 2em 2em ;
-				bottom: auto;
-				top: calc(4em - 1px);
-			}
-
-				.panel.active {
-					-moz-transform: translateY(0);
-					-webkit-transform: translateY(0);
-					-ms-transform: translateY(0);
-					transform: translateY(0);
 				}
 
 		}
@@ -1477,40 +1425,6 @@
 							background-color: #242629;
 						}
 
-	@media screen and (max-width: 736px) {
-
-		body {
-			padding: 4em 0 0 0;
-		}
-
-		#header {
-			-moz-transform: translateY(0);
-			-webkit-transform: translateY(0);
-			-ms-transform: translateY(0);
-			transform: translateY(0);
-			bottom: auto;
-			height: 4em;
-			padding: 0 1em;
-			top: 0;
-		}
-
-			body.loading #header {
-				-moz-transform: translateY(-3.4em);
-				-webkit-transform: translateY(-3.4em);
-				-ms-transform: translateY(-3.4em);
-				transform: translateY(-3.4em);
-			}
-
-			#header h1 {
-				font-size: 0.9em;
-			}
-
-			#header nav > ul > li a {
-				font-size: 0.9em;
-				padding: 0 1.15em;
-			}
-
-	}
 
 /* Main */
 

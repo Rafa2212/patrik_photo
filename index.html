@@ -2,6 +2,54 @@
 layout: default
 ---
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo+Play&display=swap" rel="stylesheet">
+
+<style>
+    @media screen and (max-width: 736px) {
+        
+        #h2Title {
+            padding-top: 0;
+        }
+
+        #h4Subtitle {
+            padding-bottom: 50px;
+        }
+
+        body {
+            padding: 4em 0 0 0;
+        }
+
+        #header {
+            -moz-transform: translateY(0);
+            -webkit-transform: translateY(0);
+            -ms-transform: translateY(0);
+            transform: translateY(0);
+            bottom: 0;
+            height: 4em;
+            padding: 0 1em;
+            top: auto;
+        }
+
+            body.loading #header {
+                -moz-transform: translateY(-3.4em);
+                -webkit-transform: translateY(-3.4em);
+                -ms-transform: translateY(-3.4em);
+                transform: translateY(-3.4em);
+            }
+
+            #header h1 {
+                font-size: 0.9em;
+            }
+
+            #header nav > ul > li a {
+                font-size: 0.9em;
+                padding: 0 1.15em;
+            }
+}
+</style>
+
 <!-- Wrapper -->
 <div id="wrapper">
     <!-- Header -->
@@ -14,20 +62,29 @@ layout: default
         </nav>
     </header>
 
-    <div>
-        <p>Ioan</p>
+    <div id="head">
+        <h2 id="h2Title" style="text-align: center; font-family: 'Cairo Play', sans-serif; padding-top: 10px;">
+            Patrik Stoian - Fotograf din Timisoara
+        </h2>
+        <h4 id="h4Subtitle" style="text-align: center; font-family: 'Cairo Play', sans-serif;">
+            Servicii foto profesionale pentru nunta, botez, petreceri si de familie
+        </h4>
     </div>
+
     <!-- Main -->
     <div id="main">
         {%- for image in site.static_files reversed -%}
         {%- if image.path contains 'fulls' -%}
         <article class="thumb">
         {% assign title = false %}
+        {%- assign imageName = image.basename | remove: '.jpg' -%}
+        {%- assign imageNameParts = imageName | split: '_' -%}
+        {%- assign gallerySplit = imageNameParts[0] -%}
         {%- for tfile in site.static_files reversed -%}
             {%- if tfile.path contains 'texts' -%}
                 {%- if tfile.path contains image.basename -%}
                     {%- assign title = true -%}
-                        <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" id="image" class="swipebox" title="{% include_relative /images/texts/{{ tfile.name }} %}">
+                        <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" id="image" class="swipebox" rel="gallery-1" title="{{ imageName }}">
                     {%- endif -%}
             {%- endif -%}
         {%- endfor -%}
