@@ -14,15 +14,14 @@ layout: default
 .snip1543 {
   background-color: #fff;
   color: #ffffff;
-  font-family: "Courier New", monospace;
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 12px;
   margin: 10px;
-  max-width: 315px;
-  min-width: 230px;
   overflow: hidden;
   position: relative;
   text-align: left;
   width: 100%;
+  height: 100%;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
 }
@@ -50,7 +49,7 @@ layout: default
   left: 0;
   right: 0;
   content: '';
-  background-color: #125ab8;
+  background-color: #06254e;
   opacity: 0.5;
   -webkit-transition: all 0.45s ease;
   transition: all 0.45s ease;
@@ -84,7 +83,7 @@ layout: default
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #125ab8;
+  background-color: #06254e;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
   content: '';
   opacity: 0.5;
@@ -109,8 +108,7 @@ layout: default
 }
 
 .snip1543 h3 {
-  font-family: "Courier New", monospace;
-  font-size: 30px;
+    font-family: 'Source Sans Pro', sans-serif;  font-size: 30px;
   font-weight: 700;
   line-height: 1em;
   text-transform: uppercase;
@@ -169,121 +167,6 @@ layout: default
   -webkit-transition-delay: 0.1s;
   transition-delay: 0.1s;
 }
-
-    @media screen and (max-width: 736px) {
-        
-        #h2Title {
-            padding-top: 0;
-        }
-
-        #h4Subtitle {
-            padding-bottom: 50px;
-        }
-
-        body {
-            padding: 4em 0 0 0;
-        }
-
-        #header {
-            -moz-transform: translateY(0);
-            -webkit-transform: translateY(0);
-            -ms-transform: translateY(0);
-            transform: translateY(0);
-            bottom: 0;
-            height: 4em;
-            padding: 0 1em;
-            top: auto;
-        }
-
-		body.loading #header {
-			-moz-transform: translateY(4em);
-			-webkit-transform: translateY(4em);
-			-ms-transform: translateY(4em);
-			transform: translateY(4em);
-		}
-
-            #header h1 {
-                font-size: 0.9em;
-            }
-
-            #header nav > ul > li a {
-                font-size: 0.9em;
-                padding: 0 1.15em;
-            }
-
-            .panel {
-		padding: 4em 4em 2em 4em ;
-		-moz-transform: translateY(100vh);
-		-webkit-transform: translateY(100vh);
-		-ms-transform: translateY(100vh);
-		transform: translateY(100vh);
-		-moz-transition: -moz-transform 0.5s ease;
-		-webkit-transition: -webkit-transform 0.5s ease;
-		-ms-transition: -ms-transform 0.5s ease;
-		transition: transform 0.5s ease;
-		-webkit-overflow-scrolling: touch;
-		background: rgba(36, 38, 41, 0.975);
-		bottom: 4em;
-		left: 0;
-		max-height: calc(80vh - 4em);
-		overflow-y: auto;
-		position: fixed;
-		width: 100%;
-		z-index: 10001;
-	}
-
-		.panel.active {
-			-moz-transform: translateY(1px);
-			-webkit-transform: translateY(1px);
-			-ms-transform: translateY(1px);
-			transform: translateY(1px);
-		}
-
-		.panel > .inner {
-			margin: 0 auto;
-			max-width: 100%;
-			width: 75em;
-		}
-
-			.panel > .inner.split {
-				display: -moz-flex;
-				display: -webkit-flex;
-				display: -ms-flex;
-				display: flex;
-			}
-
-				.panel > .inner.split > div {
-					margin-left: 4em;
-					width: 50%;
-				}
-
-				.panel > .inner.split > :first-child {
-					margin-left: 0;
-				}
-
-		.panel > .closer {
-			-moz-transition: opacity 0.2s ease-in-out;
-			-webkit-transition: opacity 0.2s ease-in-out;
-			-ms-transition: opacity 0.2s ease-in-out;
-			transition: opacity 0.2s ease-in-out;
-			background-image: url("images/close.svg");
-			background-position: center;
-			background-repeat: no-repeat;
-			background-size: 3em;
-			cursor: pointer;
-			height: 5em;
-			opacity: 0.25;
-			position: absolute;
-			right: 0;
-			top: 0;
-			width: 3em;
-			z-index: 2;
-		}
-
-			.panel > .closer:hover {
-				opacity: 1.0;
-			}
-}
 </style>
 
 <!-- Wrapper -->
@@ -298,45 +181,59 @@ layout: default
         </nav>
     </header>
 
-    <div id="head">
-        <h2 id="h2Title" style="text-align: center; font-family: 'Cairo Play', sans-serif; padding-top: 10px;">
+    <!-- <div id="head">
+        <h2 id="h2Title" style="text-align: center; font-family: 'Source Sans Pro', sans-serif; padding-top: 10px;">
             Patrik Stoian - Fotograf din Timisoara
         </h2>
-        <h4 id="h4Subtitle" style="text-align: center; font-family: 'Cairo Play', sans-serif;">
+        <h4 id="h4Subtitle" style="text-align: center; font-family: 'Source Sans Pro', sans-serif;">
             Servicii foto profesionale pentru nunta, botez, petreceri si de familie
         </h4>
-    </div>
+    </div> -->
 
     <!-- Main -->
     <div id="main">
+        {%- assign galleryList = "" | split: ',' -%}
+
         {%- for image in site.static_files reversed -%}
-        {%- if image.path contains 'fulls' -%}
-        <article class="thumb">           
-        {% assign title = false %}
-        {%- assign imageName = image.basename | remove: '.jpg' -%}
-        {%- assign imageNameParts = imageName | split: '_' -%}
-        {%- assign gallerySplit = imageNameParts[0] -%}
-        {%- for tfile in site.static_files reversed -%}
-            {%- if tfile.path contains 'texts' -%}
-                {%- if tfile.path contains image.basename -%}
-                    {%- assign title = true -%}
-                        <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" id="image" class="swipebox" rel="gallery-1" title="{{ imageName }}">
-                    {%- endif -%}
-            {%- endif -%}
+          {%- if image.path contains 'fulls' -%}
+            {%- assign imageName = image.basename | remove: '.jpg' -%}
+            {%- assign imageNameParts = imageName | split: '_' -%}
+            {%- assign gallerySplit = imageNameParts[0] -%}
+            {%- unless galleryList contains gallerySplit -%}
+              {%- assign galleryList = galleryList | push: gallerySplit -%}
+            {%- endunless -%}
+          {%- endif -%}
         {%- endfor -%}
-        {%- if title != true -%}
-            <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" id="image" class="swipebox" title="{{ image.name }}">
-        {%- endif -%}
-        <figure class="snip1543">
+        
+        {%- for image in site.static_files reversed -%}
+          {%- if image.path contains 'fulls' -%}
+            {%- assign imageName = image.basename | remove: '.jpg' -%}
+            {%- assign imageNameParts = imageName | split: '_' -%}
+            {%- assign gallerySplit = imageNameParts[0] -%}
+            {%- assign currentGalleryNum = galleryList | index_of: gallerySplit -%}
+            {%- assign currentGalleryNum = currentGalleryNum | plus: 1 -%}
+            
+            <article class="thumb">
+              {%- assign title = false -%}
+              {%- for tfile in site.static_files reversed -%}
+                {%- if tfile.path contains 'texts' and tfile.path contains image.basename -%}
+                  {%- assign title = true -%}
+                  <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" id="image" class="swipebox" rel="gallery-{{ currentGalleryNum }}" title="{{ imageName }}">
+                {%- endif -%}
+              {%- endfor -%}
+              {%- if title != true -%}
+                <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" id="image" class="swipebox" rel="gallery-{{ currentGalleryNum }}" title="{{ image.name }}">
+              {%- endif -%}
+              <figure class="snip1543">
                 <img src="{{ site.baseurl }}{{ site.image_thumbs_loc }}/{{ image.name }}" alt="" data-name="{{ image.name }}"/>
                 <figcaption>
-                     <h3>Fotografie nunta Adi si Maria</h3>
-                     <p>Timisoara 2023</p>
-                   </figcaption>
-                </figure>     
-            </a>
-        </article>
-        {%- endif -%}
+                  <h2>{{image.name}}</h2>
+                  <p>2023</p>
+                </figcaption>
+              </figure>
+              </a>
+            </article>
+          {%- endif -%}
         {%- endfor -%}
     </div>
     <!-- Footer -->
