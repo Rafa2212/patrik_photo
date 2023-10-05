@@ -192,25 +192,31 @@ layout: default
 
     <!-- Main -->
     <div id="main">
+        {%- assign processedImages = "" | split: ',' -%}
         {%- for image in site.static_files reversed -%}
-        {%- assign galleryName = image.name | split: '_' | first -%}
-          {%- if image.path contains 'thumbs' -%}
+        {%- assign imageName = image.name | replace: '.JPG', '' | replace: '.jpg', '' -%}
+        {%- assign nameSplit = imageName | split: '_' -%}
+        {%- if image.path contains 'thumbs' -%}
             <article class="thumb">
-                  <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" id="image" class="swipebox" rel="{{galleryName}}" title="{{ imageName }}">
+                  <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" id="image" class="swipebox" rel="{{ nameSplit[0] }}" title="{{ nameSplit[2] }}">
               <figure class="snip1543">
                 <img src="{{ site.baseurl }}{{ site.image_thumbs_loc }}/{{ image.name }}" alt="image" data-name="{{ image.name }}"/>
                 <figcaption>
-                  <h4>2023</h4>
-                  <p>{{image.name}}</p>
+                  <h4>{{nameSplit[3]}}</h4>
+                  <p>{{ nameSplit[1] }}</p>
                 </figcaption>
               </figure>
               </a>
+              {%- assign processedImages = processedImages | push: image.name -%}
             </article>
           {%- endif -%}
-          <!-- si nu este in thumbs atunci fa asta -->
-          {%- if image.path contains 'fulls'  -%}
-          <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" id="image" class="swipebox" rel="{{galleryName}}" title="{{ imageName }}">
-              <img src="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" alt="image" data-name="{{ image.name }}" style="display: none;"/>
+          {%- if image.path contains 'fulls'-%}
+            {%- if processedImages contains image.name-%}
+            {%- else -%}
+              <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" id="image" class="swipebox" rel="{{ nameSplit[0] }}" title="{{ nameSplit[2] }}">
+                  <img src="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" alt="image" data-name="{{ image.name }}" style="display: none;"/>
+              </a>
+            {%- endif -%}
           {%- endif -%}
         {%- endfor -%}
     </div>
