@@ -49,7 +49,7 @@ layout: default
   left: 0;
   right: 0;
   content: '';
-  background-color: #06254e;
+  background-color: #386D84;
   opacity: 0.5;
   -webkit-transition: all 0.45s ease;
   transition: all 0.45s ease;
@@ -83,7 +83,7 @@ layout: default
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #06254e;
+  background-color: #386D84;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
   content: '';
   opacity: 0.5;
@@ -308,4 +308,11 @@ layout: default
     $(this).removeClass("hover");
   }
 );
+$(document).ready(function(){
+    $('.swipebox').swipebox({
+        useZoom: true,
+        
+        zoomMax: 3
+    });
+});
 </script>
