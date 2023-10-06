@@ -144,7 +144,7 @@
 	}
 
 	body {
-		background: #242629;
+		background: #22272e;
 	}
 
 		body.loading *, body.loading *:before, body.loading *:after {
@@ -283,7 +283,7 @@
 	}
 
 	code {
-		background: #34363b;
+		background: #22272e;
 		border: solid 1px #36383c;
 		font-family: "Courier New", monospace;
 		font-size: 0.9em;
@@ -521,7 +521,7 @@
 		-webkit-appearance: none;
 		-ms-appearance: none;
 		appearance: none;
-		background: #34363b;
+		background: #22272e;
 		border: 0;
 		border-radius: 0;
 		color: #a0a0a1;
@@ -640,7 +640,7 @@
 
 			input[type="checkbox"] + label:before,
 			input[type="radio"] + label:before {
-				background: #34363b;
+				background: #22272e;
 				content: '';
 				display: inline-block;
 				height: 1.65em;
@@ -875,7 +875,7 @@
 		}
 
 			table tbody tr:nth-child(2n + 1) {
-				background-color: #34363b;
+				background-color: #22272e;
 			}
 
 		table td {
@@ -937,7 +937,7 @@
 		-ms-transition: -ms-transform 0.5s ease;
 		transition: transform 0.5s ease;
 		-webkit-overflow-scrolling: touch;
-		background: rgba(36, 38, 41, 0.975);
+		background: rgb(28, 33, 40);
 		bottom: 4em;
 		left: 0;
 		max-height: calc(80vh - 4em);
@@ -952,6 +952,7 @@
 			-webkit-transform: translateY(1px);
 			-ms-transform: translateY(1px);
 			transform: translateY(1px);
+			background: rgb(28, 33, 40);
 		}
 
 		.panel > .inner {
@@ -1231,7 +1232,7 @@
 			-webkit-transition: opacity 0.5s ease, visibility 0.5s;
 			-ms-transition: opacity 0.5s ease, visibility 0.5s;
 			transition: opacity 0.5s ease, visibility 0.5s;
-			background: rgba(36, 38, 41, 0.5);
+			background: #1c2128;
 			content: '';
 			display: block;
 			height: 100%;
@@ -1245,7 +1246,7 @@
 		}
 
 			body.ie #wrapper:after {
-				background: rgba(36, 38, 41, 0.8);
+				background: rgb(28, 33, 40);
 			}
 
 		body.modal-active #wrapper {
@@ -1329,7 +1330,7 @@
 		-moz-user-select: none;
 		-ms-user-select: none;
 		-webkit-user-select: none;
-		background: #1f2224;
+		background: #1c2128;
 		bottom: -1em;
 		height: 5em;
 		left: 0;
@@ -1407,7 +1408,7 @@
 						}
 
 						#header nav > ul > li a.active {
-							background-color: #242629;
+							background-color: #22272e;
 						}
 
 
@@ -1502,7 +1503,7 @@
 			-webkit-transition: opacity 0.5s ease, visibility 0.5s;
 			-ms-transition: opacity 0.5s ease, visibility 0.5s;
 			transition: opacity 0.5s ease, visibility 0.5s;
-			background: rgba(36, 38, 41, 0.25);
+			background: rgb(28, 33, 40);
 			content: '';
 			display: block;
 			height: 100%;
@@ -1516,7 +1517,7 @@
 		}
 
 			body.ie #main:after {
-				background: rgba(36, 38, 41, 0.55);
+				background: rgb(28, 33, 40);
 			}
 
 		body.content-active #main {
@@ -2015,9 +2016,8 @@
 		}
 
 /* Footer */
-
 	#footer .copyright {
-		color: #505051;
+		color: #1c2128;
 		font-size: 0.9em;
 	}
 

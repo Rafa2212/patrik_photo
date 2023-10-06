@@ -22,7 +22,9 @@
 				videoMaxWidth : 1140,
 				vimeoColor : 'cccccc',
 				beforeOpen: null,
-				afterOpen: null,
+				afterOpen: function(){
+					wheelzoom(document.querySelector('.swipebox-img'));
+				},
 				afterClose: null,
 				nextSlide: null,
 				prevSlide: null,

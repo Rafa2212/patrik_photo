@@ -4,16 +4,15 @@ layout: default
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cairo+Play&display=swap" rel="stylesheet">
 
 <style>
 
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
 @import url(https://fonts.googleapis.com/css?family=Teko:700);
 
+
 .snip1543 {
-  background-color: #fff;
-  color: #ffffff;
+  background-color: #ffffff;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 12px;
   margin: 10px;
@@ -49,7 +48,7 @@ layout: default
   left: 0;
   right: 0;
   content: '';
-  background-color: #386D84;
+  background-color: #ad9f9f;
   opacity: 0.5;
   -webkit-transition: all 0.45s ease;
   transition: all 0.45s ease;
@@ -83,7 +82,7 @@ layout: default
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #386D84;
+  background-color: #ffffff;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
   content: '';
   opacity: 0.5;
@@ -101,21 +100,26 @@ layout: default
 }
 
 .snip1543 h3,
-.snip1543 p {
+.snip1543 h4 {
   margin: 0;
   opacity: 0;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
 }
 
 .snip1543 h3 {
-    font-family: 'Source Sans Pro', sans-serif;  font-size: 30px;
-  font-weight: 700;
+  font-family: 'Source Sans Pro', sans-serif;  font-size: 30px;
+  font-weight: 800;
+  color:black;
   line-height: 1em;
   text-transform: uppercase;
 }
 
-.snip1543 p {
+.snip1543 h4 {
+  color: black;
+  padding-top: 15px;
   font-size: 0.9em;
+  line-height: 1em;
+  font-weight: 800;
 }
 
 .snip1543 a {
@@ -129,8 +133,8 @@ layout: default
 
 .snip1543:hover h3,
 .snip1543.hover h3,
-.snip1543:hover p,
-.snip1543.hover p {
+.snip1543:hover h4,
+.snip1543.hover h4 {
   -webkit-transform: translateY(0);
   transform: translateY(0);
   opacity: 0.9;
@@ -198,12 +202,12 @@ layout: default
         {%- assign nameSplit = imageName | split: '_' -%}
         {%- if image.path contains 'thumbs' -%}
             <article class="thumb">
-                  <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" id="image" class="swipebox" rel="{{ nameSplit[0] }}" title="{{ nameSplit[2] }}">
+                  <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" id="image" class="swipebox" rel="{{ nameSplit[0] }}" title=" ">
               <figure class="snip1543">
                 <img src="{{ site.baseurl }}{{ site.image_thumbs_loc }}/{{ image.name }}" alt="image" data-name="{{ image.name }}"/>
                 <figcaption>
-                  <h4>{{nameSplit[3]}}</h4>
-                  <p>{{ nameSplit[1] }}</p>
+                  <h3>{{nameSplit[3]}}</h3>
+                  <h4>{{ nameSplit[1] }}</>
                 </figcaption>
               </figure>
               </a>
@@ -213,7 +217,7 @@ layout: default
           {%- if image.path contains 'fulls'-%}
             {%- if processedImages contains image.name-%}
             {%- else -%}
-              <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" id="image" class="swipebox" rel="{{ nameSplit[0] }}" title="{{ nameSplit[2] }}">
+              <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" id="image" class="swipebox" rel="{{ nameSplit[0] }}" title=" ">
                   <img src="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" alt="image" data-name="{{ image.name }}" style="display: none;"/>
               </a>
             {%- endif -%}
@@ -308,11 +312,4 @@ layout: default
     $(this).removeClass("hover");
   }
 );
-$(document).ready(function(){
-    $('.swipebox').swipebox({
-        useZoom: true,
-        
-        zoomMax: 3
-    });
-});
 </script>
