@@ -15,7 +15,7 @@
 			defaults = {
 				useCSS : true,
 				useSVG : true,
-				initialIndexOnArray : 0,
+				initialIndexOnArray : 2,
 				removeBarsOnMobile : true,
 				hideCloseButtonOnMobile : false,
 				hideBarsDelay : 3000,

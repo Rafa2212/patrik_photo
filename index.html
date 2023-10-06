@@ -202,12 +202,12 @@ layout: default
         {%- assign nameSplit = imageName | split: '_' -%}
         {%- if image.path contains 'thumbs' -%}
             <article class="thumb">
-                  <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" id="image" class="swipebox" rel="{{ nameSplit[0] }}" title=" ">
+                  <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" id="image" class="swipebox" rel="{{ nameSplit[1] }}" title=" ">
               <figure class="snip1543">
                 <img src="{{ site.baseurl }}{{ site.image_thumbs_loc }}/{{ image.name }}" alt="image" data-name="{{ image.name }}"/>
                 <figcaption>
                   <h3>{{nameSplit[3]}}</h3>
-                  <h4>{{ nameSplit[1] }}</>
+                  <h4>{{ nameSplit[2] }}</h4>
                 </figcaption>
               </figure>
               </a>
@@ -217,7 +217,7 @@ layout: default
           {%- if image.path contains 'fulls'-%}
             {%- if processedImages contains image.name-%}
             {%- else -%}
-              <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" id="image" class="swipebox" rel="{{ nameSplit[0] }}" title=" ">
+              <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" id="image" class="swipebox" rel="{{ nameSplit[1] }}" title=" ">
                   <img src="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" alt="image" data-name="{{ image.name }}" style="display: none;"/>
               </a>
             {%- endif -%}
