@@ -18,7 +18,7 @@ layout: default
   margin: 10px;
   overflow: hidden;
   position: relative;
-  text-align: left;
+  text-align: right;
   width: 100%;
   height: 100%;
   -webkit-transform: translateZ(0);
@@ -36,8 +36,14 @@ layout: default
 
 .snip1543 img {
   backface-visibility: hidden;
-  max-width: 100%;
-  vertical-align: top;
+  width: 100%;  /* Make sure the image stretches to fill its container */
+  height: 100%; /* Adjust the height to fit the container */
+  object-fit: cover; /* Ensures that the image covers the container without distorting its aspect ratio */
+  vertical-align: middle;
+  text-align: center;
+  border: none; /* Removes any borders */
+  margin: 0; /* Removes any margins */
+  padding: 0; /* Removes any padding */
 }
 
 .snip1543:before,
@@ -111,6 +117,7 @@ layout: default
   font-weight: 800;
   color:black;
   line-height: 1em;
+  text-align: left;
   text-transform: uppercase;
 }
 
@@ -119,6 +126,7 @@ layout: default
   padding-top: 15px;
   font-size: 0.9em;
   line-height: 1em;
+  text-align: left;
   font-weight: 800;
 }
 
