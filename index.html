@@ -179,6 +179,10 @@ layout: default
   -webkit-transition-delay: 0.1s;
   transition-delay: 0.1s;
 }
+
+.fulls{
+  display: none;
+}
 </style>
 
 <!-- Wrapper -->
@@ -192,15 +196,6 @@ layout: default
             </ul>
         </nav>
     </header>
-
-    <!-- <div id="head">
-        <h2 id="h2Title" style="text-align: center; font-family: 'Source Sans Pro', sans-serif; padding-top: 10px;">
-            Patrik Stoian - Fotograf din Timisoara
-        </h2>
-        <h4 id="h4Subtitle" style="text-align: center; font-family: 'Source Sans Pro', sans-serif;">
-            Servicii foto profesionale pentru nunta, botez, petreceri si de familie
-        </h4>
-    </div> -->
 
     <!-- Main -->
     <div id="main">
@@ -226,7 +221,7 @@ layout: default
             {%- if processedImages contains image.name-%}
             {%- else -%}
               <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" id="image" class="swipebox" rel="{{ nameSplit[0] }}" title=" ">
-                  <img src="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" alt="image" data-name="{{ image.name }}" style="display: none;"/>
+                  <img src="" alt="image" data-name="{{ image.name }}" style="display: none;"/>
               </a>
             {%- endif -%}
           {%- endif -%}
