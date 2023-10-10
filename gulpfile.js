@@ -14,11 +14,11 @@ gulp.task('delete', function () {
 gulp.task('resize-images', function () {
     return gulp.src('images/*.*')
         .pipe(imageResize({
-            quality: 0.99
+            quality: 0.2
         }))
         .pipe(gulp.dest('images/fulls'))
         .pipe(imageResize({
-            quality: 0.98
+            quality: 0.1
         }))
         .pipe(gulp.dest('images/thumbs'));
 });
