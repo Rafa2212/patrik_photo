@@ -11,12 +11,16 @@ gulp.task('delete', function () {
     return del(['images/*.*']);
 });
 
-gulp.task('resize-images', function () {
-    return gulp.src('images/*.*')
+gulp.task('resize-fulls', function () {
+    return gulp.src(['images/*.*', '!images/*10000*.*'])
         .pipe(imageResize({
             quality: 0.2
         }))
         .pipe(gulp.dest('images/fulls'))
+});
+
+gulp.task('resize-thumbs', function () {
+    return gulp.src(['images/*.*', 'images/*10000*.*'])
         .pipe(imageResize({
             quality: 0.1
         }))
@@ -48,7 +52,9 @@ gulp.task('minify-js', function () {
 gulp.task('build', gulp.series('sass', 'minify-js'));
 
 // resize images
-gulp.task('resize', gulp.series('resize-images', 'delete'));
+gulp.task('resize', gulp.series('resize-thumbs', 'resize-fulls'));
+
+gulp.task('resize', gulp.series('resize-fulls', 'delete'));
 
 // default task
 gulp.task('default', gulp.series('build', 'resize'));
