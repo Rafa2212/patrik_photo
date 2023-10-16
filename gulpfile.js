@@ -14,7 +14,7 @@ gulp.task('delete', function () {
 gulp.task('resize-fulls', function () {
     return gulp.src(['images/*.*'])
         .pipe(imageResize({
-            quality: 0.2
+            quality: 0.6
         }))
         .pipe(gulp.dest('images/fulls'))
 });
@@ -22,7 +22,7 @@ gulp.task('resize-fulls', function () {
 gulp.task('resize-thumbs', function () {
     return gulp.src(['images/*10000*.*'])
         .pipe(imageResize({
-            quality: 0.1
+            quality: 0.3
         }))
         .pipe(gulp.dest('images/thumbs'));
 });
