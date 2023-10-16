@@ -5,13 +5,18 @@ layout: default
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3Q14P9N7NK"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3Q14P9N7NK"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-3Q14P9N7NK');
   </script>
+  <meta charset="utf-8"/>
+  <meta name="description" content="Bună, sunt Patrik și doresc să îți prezint serviciile foto pe care le ofer. Am pornit în călătoria mea de fotograf cu poze realizate la evenimente business, petreceri de firmă, nunți, botezuri, dar și ședințe foto de faimilie sau portofoliu. Pozele mele oglindesc pasiunea și profesionalismul oferit la fiecare ședință foto. Ofer ședințe foto la cea mai înaltă calitate în zona județului Timiș și nu numai.">
+  <meta name="keywords" content="Fotograf de nuntă, Fotograf de botez, Fotograf de evenimente">
+  <meta name="author" content="Patrik Stoian">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <style>
 
@@ -213,9 +218,9 @@ layout: default
         {%- assign nameSplit = imageName | split: '_' -%}
         {%- if image.path contains 'thumbs' -%}
             <article class="thumb">
-                  <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" id="image" class="swipebox" rel="{{ nameSplit[0] }}" title=" ">
+                  <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" id="image" class="swipebox" rel="{{ nameSplit[0] }}" title="">
               <figure class="snip1543">
-                <img src="{{ site.baseurl }}{{ site.image_thumbs_loc }}/{{ image.name }}" alt="image" data-name="{{ image.name }}"/>
+                <img src="{{ site.baseurl }}{{ site.image_thumbs_loc }}/{{ image.name }}" alt="Fotograf de nunta Timisoara" aria-label="Fotograf de nunta Timisoara" data-name="{{ image.name }}"/>
                 <figcaption>
                   <h3>{{nameSplit[2]}}</h3>
                   <h4>{{ nameSplit[1] }}</h4>
@@ -229,7 +234,7 @@ layout: default
             {%- if processedImages contains image.name-%}
             {%- else -%}
               <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" id="image" class="swipebox" rel="{{ nameSplit[0] }}" title=" ">
-                  <img src="" alt="image" data-name="{{ image.name }}" style="display: none;"/>
+                  <img src="" alt="image" data-name="{{ image.name }}" alt="Fotograf de nunta Timisoara" aria-label="Fotograf de nunta Timisoara" style="display: none;"/>
               </a>
             {%- endif -%}
           {%- endif -%}
