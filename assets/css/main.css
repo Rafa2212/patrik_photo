@@ -261,6 +261,10 @@
 			font-size: 0.7em;
 		}
 
+		#phoneRef{
+			padding-left: 0;
+		}
+
 	}
 
 	sub {
@@ -1879,7 +1883,9 @@
 					-ms-transition-delay: 0.95s;
 					transition-delay: 0.95s;
 				}
-
+				#phoneRef{
+					padding-left: 0;
+				}
 		}
 
 		@media screen and (max-width: 736px) {
