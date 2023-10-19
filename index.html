@@ -191,8 +191,9 @@ layout: default
   .fulls{
     display: none;
   }
-  </style>
 
+  </style>
+<!-- TODO: implement SEO Structured Data / Other SEO Techniques -->
   <!-- Wrapper -->
   <div id="wrapper">
       <!-- Header -->
@@ -212,14 +213,16 @@ layout: default
           {%- assign imageName = image.name | replace: '.JPG', '' | replace: '.jpg', '' -%}
           {%- assign nameSplit = imageName | split: '_' -%}
           {%- assign ariaLabel = nameSplit[2] | replace: '-', '' -%}
+          {%- assign albumName = nameSplit[1] | replace: '-', ' ' -%}
           {%- if image.path contains 'thumbs' -%}
               <article class="thumb">
                     <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" class="swipebox" rel="{{ nameSplit[0] }}" title="">
                 <figure class="snip1543">
-                  <img src="{{ site.baseurl }}{{ site.image_thumbs_loc }}/{{ image.name }}" alt="Fotograf de nunta din Timisoara Patrik Stoian - Servicii foto de calitate." aria-label="{{ ariaLabel }}" data-name="{{ image.name }}"/>
+                  <img src="{{ site.baseurl }}{{ site.image_thumbs_loc }}/{{ image.name }}" alt="Fotograf de nunta din Timisoara Patrik Stoian - Servicii foto de calitate." aria-label="{{ ariaLabel }}"/>
                   <figcaption>
-                    <h3>{{nameSplit[2]}}</h3>
-                    <h4>{{ nameSplit[1] }}</h4>
+                    <!-- TODO: remove H3/H4 -->
+                    <h3>{{ nameSplit[2] }}</h3>
+                    <h4>{{ albumName }}</h4>
                   </figcaption>
                 </figure>
                 </a>
