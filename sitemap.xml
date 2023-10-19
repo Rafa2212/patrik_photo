@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
     {% for image in site.static_files reversed %}
     <url>
-        <loc>{{ image.src }}</loc>
+        <loc>{{ image.url }}</loc>
         <image:image>
             <image:loc>{{ image.src }}</image:loc>
             <image:title>Patrik Stoian Fotograf</image:title>
