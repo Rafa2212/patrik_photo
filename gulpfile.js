@@ -20,9 +20,9 @@ gulp.task('resize-fulls', function () {
 });
 
 gulp.task('resize-thumbs', function () {
-    return gulp.src(['images/*10000*.*'])
+    return gulp.src(['images/*.*'])
         .pipe(imageResize({
-            quality: 0.3
+            quality: 0.1
         }))
         .pipe(gulp.dest('images/thumbs'));
 });
