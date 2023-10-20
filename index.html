@@ -218,7 +218,7 @@ layout: default
               <article class="thumb">
                     <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" class="swipebox" rel="{{ nameSplit[0] }}" title="">
                 <figure class="snip1543">
-                  <img src="{{ site.baseurl }}{{ site.image_thumbs_loc }}/{{ image.name }}" alt="Fotograf de nunta din Timisoara Patrik Stoian - Servicii foto de calitate." aria-label="{{ ariaLabel }}"/>
+                  <img loading="lazy" src="{{ site.baseurl }}{{ site.image_thumbs_loc }}/{{ image.name }}" alt="Fotograf de nunta din Timisoara Patrik Stoian - Servicii foto de calitate." aria-label="{{ ariaLabel }}"/>
                   <figcaption>
                     <!-- TODO: remove H3/H4 -->
                     <h3>{{ nameSplit[2] }}</h3>
@@ -233,7 +233,7 @@ layout: default
               {%- if processedImages contains image.name-%}
               {%- else -%}
                 <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" class="swipebox" rel="{{ nameSplit[0] }}" title=" ">
-                    <img src="" data-name="{{ image.name }}" alt="Fotograf de nunta din Timisoara Patrik Stoian - Servicii foto de calitate." style="display: none;"/>
+                    <img loading="lazy" src="" data-name="{{ image.name }}" alt="Fotograf de nunta din Timisoara Patrik Stoian - Servicii foto de calitate." style="display: none;"/>
                 </a>
               {%- endif -%}
             {%- endif -%}
