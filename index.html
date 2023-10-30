@@ -195,7 +195,6 @@ layout: default
   }
 
   </style>
-<!-- TODO: implement SEO Structured Data / Other SEO Techniques -->
   <!-- Wrapper -->
   <div id="wrapper">
       <!-- Header -->
@@ -220,9 +219,8 @@ layout: default
               <article class="thumb">
                     <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" class="swipebox" rel="{{ nameSplit[0] }}" title="">
                 <figure class="snip1543">
-                  <img loading="lazy" src="{{ site.baseurl }}{{ site.image_thumbs_loc }}/{{ image.name }}" alt="Fotograf de nunta din Timisoara Patrik Stoian - Servicii foto de calitate." aria-label="{{ ariaLabel }}"/>
+                  <img loading="lazy" src="{{ site.baseurl }}{{ site.image_thumbs_loc }}/{{ image.name }}" alt="Fotograf de nuntă din Timișoara | Fotograf de botez din Timișoara | Fotograf de petreceri din Timișoara | Fotograf de evenimente din Timișoara | Patrik Stoian Fotograf" aria-label="{{ ariaLabel }}"/>
                   <figcaption>
-                    <!-- TODO: remove H3/H4 -->
                     <h3>{{ nameSplit[2] }}</h3>
                     <h4>{{ albumName }}</h4>
                   </figcaption>
@@ -235,7 +233,7 @@ layout: default
               {%- if processedImages contains image.name-%}
               {%- else -%}
                 <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" class="swipebox" rel="{{ nameSplit[0] }}" title=" ">
-                    <img loading="lazy" src="" data-name="{{ image.name }}" alt="Fotograf de nunta din Timisoara Patrik Stoian - Servicii foto de calitate." style="display: none;"/>
+                    <img loading="lazy" src="" data-name="{{ image.name }}" alt="Fotograf de nuntă din Timișoara | Fotograf de botez din Timișoara | Fotograf de petreceri din Timișoara | Fotograf de evenimente din Timișoara | Patrik Stoian Fotograf" style="display: none;"/>
                 </a>
               {%- endif -%}
             {%- endif -%}
